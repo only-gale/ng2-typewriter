@@ -15,7 +15,7 @@ node_modules/
 !webpack.config.js
 !webpack.config.min.js
 
-!config/
+!config/*
 bundles/
 
 ##############

@@ -1,0 +1,68 @@
+{
+  "name": "@galeyao/ng2-typewriter",
+  "version": "1.0.0",
+  "description": "A typewriter for angular2.",
+  "typings": "index.d.ts",
+  "main": "bundles/ng2-typewriter.umd.js",
+  "module": "index.js",
+  "scripts": {
+    "prepublish": "npm run bundle",
+    "********************** CLEAR **********************": "",
+    "clear:js": "find src -type f \\( -iname '*.js' -o -iname '*.js.map' \\) -delete && rm -f index.js index.js.map",
+    "clear:dts": "find src -type f -iname '*.d.ts' -delete && rm -f index.d.ts",
+    "clear:css": "find src -type f \\( -iname '*.css' -o -iname '*.css.map' \\) -delete",
+    "clear:metadata": "find src -type f -iname '*.metadata.json' -delete && rm -f index.metadata.json",
+    "clear:bundle": "rm -rf bundles",
+    "clear:tsc": "npm run clear:js && npm run clear:dts",
+    "clear:ngc": "npm run clear:tsc && npm run clear:metadata",
+    "clear": "npm run clear:ngc && npm run clear:css && npm run clear:bundle",
+    "clear:full": "npm run clear && rm -rf node_modules && rm -rf typings",
+    "********************** WEBPACK **********************": "",
+    "webpack": "webpack",
+    "webpack:min": "webpack --config webpack.config.min.js",
+    "********************** BUNDLE **********************": "",
+    "bundle": "npm run clear && ngc && npm run webpack && npm run webpack:min"
+  },
+  "keywords": [
+    "angular2",
+    "typewriter",
+    "typescript",
+    "ng2",
+    "angular"
+  ],
+  "author": {
+    "name": "Gale Yao",
+    "email": "yaogang1987613@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/common": "^2.4.4",
+    "@angular/compiler": "^2.4.4",
+    "@angular/compiler-cli": "^2.4.4",
+    "@angular/core": "^2.4.4",
+    "@angular/platform-browser": "^2.4.4",
+    "@angular/platform-browser-dynamic": "^2.4.4",
+    "@angular/platform-server": "^2.4.4",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "codelyzer": "^2.0.0-beta.4",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.0.3",
+    "tslint": "^4.3.1",
+    "tslint-loader": "^3.3.0",
+    "typescript": "^2.1.5",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.0",
+    "zone.js": "^0.7.6"
+  },
+  "peerDependencies": {
+    "@angular/core": "^2.4.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://only-gale/github/ng2-typewriter.git"
+  }
+}

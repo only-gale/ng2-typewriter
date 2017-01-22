@@ -1,0 +1,3 @@
+@license Gale Yao v1.0.0
+(c) 2016 Gale Yao https://github.com/only-gale/ng2-typewriter
+License: MIT

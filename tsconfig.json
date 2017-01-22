@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "es2015",
+        "target": "es5",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "inlineSources": true,
+        "sourceMap": true,
+        "declaration": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors":true,
+        "noUnusedParameters": true,
+        "pretty": true,
+        "skipLibCheck": true,
+        "stripInternal": true,
+        "lib": ["es2015", "dom"]
+    },
+    "exclude": [
+        "node_modules",
+        "bundles"
+    ],
+    "files": [
+        "index.ts",
+        "./src/ng2-typewriter.ts",
+        "./src/typewriter.directive.ts",
+        "./src/typewriter.content.ts"
+    ],
+    "angularCompilerOptions": {
+        "skipMetadataEmit": false,
+        "skipTemplateCodegen": true
+    }
+}

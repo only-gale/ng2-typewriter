@@ -12,7 +12,8 @@ node_modules/
 *.map
 *.d.ts
 *.metadata.json
-!webpack.config.*.js
+!webpack.config.js
+!webpack.config.min.js
 
 !config/
 bundles/

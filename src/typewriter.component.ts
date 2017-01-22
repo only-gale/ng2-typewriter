@@ -4,8 +4,20 @@
 import { Component, OnInit, Input } from "@angular/core";
 @Component({
     selector: "g-typewriter",
-    templateUrl: "./typewriter.component.html",
-    styleUrls: ["./typewriter.component.css"]
+    template: `
+        <div class="motto" g-typewriter [contents]="contents" [speed]="speed" [beforeType]="beforeType" 
+        [beforeStart]="beforeStart" [delay]="delay" [afterEnd]="afterEnd" [erasable]="erasable" (isDone)="onDone($event)">
+            <span class="wrap"></span>
+            <g-cursor [activated]="!isDone">{{cursor}}</g-cursor>
+        </div>
+    `,
+    styles: [`
+        .special-typewriter {
+            color       : darkred;
+            font-family : Arial, Helvetica, sans-serif;
+            font-weight : bolder;
+        }
+    `]
 })
 
 export class TypewriterComponent implements OnInit {

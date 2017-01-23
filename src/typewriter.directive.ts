@@ -42,7 +42,9 @@ export class TypewriterDirective implements AfterViewInit {
     private _beforeStart: number = 0;
     private _afterEnd: number = 500;
     private _delay = this._afterEnd * this._delay_ratio;           // Delay before type next sentence out.
-    private _speed = 0;
+    private _speed = 40;
+    private _speed_clone = this._speed;
+    private _deletingAcceleration = 5;
 
     @Output() isDone = new EventEmitter<boolean>();
 
@@ -70,8 +72,13 @@ export class TypewriterDirective implements AfterViewInit {
         this._delay = delay || this._delay;
     }
 
+    @Input() set deletingAcceleration( deletingAcceleration: number ) {
+        this._deletingAcceleration = deletingAcceleration || this._deletingAcceleration;
+    }
+
     @Input() set speed( speed: number ) {
         this._speed = speed || this._speed;
+        this._speed_clone = Math.max(0, this._speed);
     }
 
     private tick(): void {
@@ -96,11 +103,12 @@ export class TypewriterDirective implements AfterViewInit {
 
         if ( this._isDeleting ) {
             this._text_decorated = fullText.substring(0, this._text_decorated.length - 1);
-            delta /= 2;     // Speed up.
+            delta = this._get_deleting_speed();     // Speed up.
             if ( this._text_decorated === '' ) {
                 this._isDeleting = false;
                 this._loopNum++;
-                delta = this._beforeStart;      // Type next out immediately.
+                this._speed_clone = this._speed;
+                delta = this._beforeStart;
             }
         } else {
             this._text_decorated = fullText.substring(0, this._text_decorated.length + 1);
@@ -111,6 +119,11 @@ export class TypewriterDirective implements AfterViewInit {
         }
 
         this._show(delta);
+    }
+
+    private _get_deleting_speed(): number {
+        this._speed_clone -= this._deletingAcceleration;
+        return Math.max(this._speed / 4, this._speed_clone);
     }
 
     private _deal_with_unerasable( fullText: string ): void {

@@ -3,10 +3,10 @@
  */
 import { Component, OnInit, Input } from "@angular/core";
 @Component({
-    selector: "g-typewriter",
+    selector: "typewriter",
     template: `
-        <div class="motto" g-typewriter [contents]="contents" [speed]="speed" [beforeType]="beforeType" 
-        [beforeStart]="beforeStart" [delay]="delay" [afterEnd]="afterEnd" [erasable]="erasable" (isDone)="onDone($event)">
+        <div g-typewriter [contents]="contents" [speed]="speed" [beforeType]="beforeType" [beforeStart]="beforeStart"
+        [delay]="delay" [afterEnd]="afterEnd" [erasable]="erasable" [deletingAcceleration]="deletingAcceleration" (isDone)="onDone($event)">
             <span class="wrap"></span>
             <g-cursor [activated]="!isDone">{{cursor}}</g-cursor>
         </div>
@@ -63,6 +63,8 @@ export class TypewriterComponent implements OnInit {
      * @type {number}
      */
     @Input() speed: number = 100 - Math.random() * 80;
+
+    @Input() deletingAcceleration: number = this.speed / 8;
 
     @Input() cursor: string = "_";
 

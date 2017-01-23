@@ -7,14 +7,15 @@ node_modules/
 #########
 ## Misc
 #########
-/*.ts
-!/*.js
-!/*.map
-!/*.d.ts
-!/*.metadata.json
-webpack.config.*.js
+*.ts
+!*.js
+!*.map
+!*.d.ts
+!*.metadata.json
+webpack.config.js
+webpack.config.min.js
 
-config/
+config/*
 !bundles/
 
 ##############

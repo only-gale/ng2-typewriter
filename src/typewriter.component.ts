@@ -2,6 +2,7 @@
  * Created by gale on 17-1-22.
  */
 import { Component, OnInit, Input } from "@angular/core";
+import { TypewriterContent } from "./typewriter.content";
 @Component({
     selector: "typewriter",
     template: `
@@ -26,7 +27,7 @@ export class TypewriterComponent implements OnInit {
     ngOnInit() {
     }
 
-    @Input() contents: string[] = [];
+    @Input() contents: TypewriterContent[] = [];
 
     /**
      * If it's true, delete previous item of contents before typing next one out.

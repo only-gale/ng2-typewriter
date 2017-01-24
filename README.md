@@ -12,7 +12,7 @@ An implementation of angular typewriter for Angular 2.
 First you need to install the npm module:
 
 ```sh
-npm install @galeyao/ng2-typewriter --save
+npm install ng2-typewriter --save
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ npm install @galeyao/ng2-typewriter --save
 Finally, you can use ng2-typewriter in your Angular 2 project. Now you can import the `TypewriterModule`:
 
 ```ts
-import { TypewriterModule } from "@galeyao/ng2-typewriter";
+import { TypewriterModule } from "ng2-typewriter";
 ```
 
 And then you can put the `TypewriterComponent`, which is provided by `TypewriterModule`, to anywhere you wanna create a typewriter:
@@ -40,7 +40,7 @@ Since the typewriter only can read objects of type [TypewriterContent](#Typewrit
 But first, you need make `TypewriterService` available to your components:
 
 ```ts
-import { TypewriterService, TypewriterContent } from "@galeyao/ng2-typewriter";
+import { TypewriterService, TypewriterContent } from "ng2-typewriter";
 ```
 
 And then add the `TypewriterService` into your components' `providers`:

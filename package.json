@@ -1,5 +1,5 @@
 {
-  "name": "@galeyao/ng2-typewriter",
+  "name": "ng2-typewriter",
   "version": "1.0.0",
   "description": "A typewriter for angular2.",
   "typings": "index.d.ts",

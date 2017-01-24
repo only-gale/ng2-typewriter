@@ -35,7 +35,10 @@
     "email": "yaogang1987613@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@angular/core": "^2.4.4",
+    "typescript": "^2.1.5"
+  },
   "devDependencies": {
     "@angular/common": "^2.4.4",
     "@angular/compiler": "^2.4.4",
@@ -64,5 +67,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/only-gale/ng2-typewriter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/only-gale/ng2-typewriter/issues"
   }
 }

@@ -35,10 +35,7 @@
     "email": "yaogang1987613@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {
-    "@angular/core": "^2.4.4",
-    "typescript": "^2.1.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/common": "^2.4.4",
     "@angular/compiler": "^2.4.4",

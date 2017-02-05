@@ -2,6 +2,10 @@
 
 An implementation of angular typewriter for Angular 2.
 
+>It's been a while from last commitment, thanks for downloading.
+But I notice there still several bugs those bring bad experience to you, really sorry for that, **I'll keep working on it**.
+Please let me know if you encountered any bugs on the [bug list page](https://github.com/only-gale/ng2-typewriter/issues).
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#Configration)

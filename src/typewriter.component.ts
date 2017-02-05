@@ -6,8 +6,8 @@ import { TypewriterContent } from "./typewriter.content";
 @Component({
     selector: "typewriter",
     template: `
-        <div g-typewriter [contents]="contents" [speed]="speed" [beforeType]="beforeType" [beforeStart]="beforeStart"
-        [delay]="delay" [afterEnd]="afterEnd" [erasable]="erasable" [deletingAcceleration]="deletingAcceleration" (isDone)="onDone($event)">
+        <div g-typewriter [contents]="contents" [speed]="speed" [beforeType]="beforeType" [beforeStart]="beforeStart" [delay]="delay"
+        [afterEnd]="afterEnd" [erasable]="erasable" [deletingAcceleration]="deletingAcceleration" [deletingTopSpeed]="deletingTopSpeed" (isDone)="onDone($event)">
             <span class="wrap"></span>
             <g-cursor [activated]="!isDone">{{cursor}}</g-cursor>
         </div>
@@ -24,8 +24,7 @@ import { TypewriterContent } from "./typewriter.content";
 export class TypewriterComponent implements OnInit {
     constructor() { }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
     @Input() contents: TypewriterContent[] = [];
 
@@ -66,6 +65,8 @@ export class TypewriterComponent implements OnInit {
     @Input() speed: number = 100 - Math.random() * 80;
 
     @Input() deletingAcceleration: number = this.speed / 8;
+
+    @Input() deletingTopSpeed: number = this.speed / 4;
 
     @Input() cursor: string = "_";
 

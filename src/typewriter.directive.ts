@@ -10,6 +10,7 @@ import { TypewriterContent } from "./typewriter.content";
 export class TypewriterDirective implements AfterViewInit {
     ngAfterViewInit(): void {
         this._target = this.el.nativeElement.querySelector('span.wrap');
+        this._speed_clone = this._speed;
         setTimeout(() => this.tick(), this._beforeType);
     }
 
@@ -41,10 +42,11 @@ export class TypewriterDirective implements AfterViewInit {
     private _beforeType: number = 500;
     private _beforeStart: number = 0;
     private _afterEnd: number = 500;
-    private _delay = this._afterEnd * this._delay_ratio;           // Delay before type next sentence out.
-    private _speed = 40;
-    private _speed_clone = this._speed;
-    private _deletingAcceleration = 5;
+    private _delay: number = this._afterEnd * this._delay_ratio;           // Delay before type next sentence out.
+    private _speed: number = 40;
+    private _speed_clone: number = this._speed;
+    private _deletingTopSpeed: number = 10;
+    private _deletingAcceleration: number = 5;
 
     @Output() isDone = new EventEmitter<boolean>();
 
@@ -57,28 +59,31 @@ export class TypewriterDirective implements AfterViewInit {
     }
 
     @Input() set beforeType( beforeType: number ) {
-        this._beforeType = beforeType || this._beforeType;
+        this._beforeType = Math.max(0, beforeType);
     }
 
     @Input() set beforeStart( beforeStart: number ) {
-        this._beforeStart = beforeStart || this._beforeStart;
+        this._beforeStart = Math.max(0, beforeStart);
     }
 
     @Input() set afterEnd( afterEnd: number ) {
-        this._afterEnd = afterEnd || this._afterEnd;
+        this._afterEnd = Math.max(0, afterEnd);
     }
 
     @Input() set delay( delay: number ) {
-        this._delay = delay || this._delay;
-    }
-
-    @Input() set deletingAcceleration( deletingAcceleration: number ) {
-        this._deletingAcceleration = deletingAcceleration || this._deletingAcceleration;
+        this._delay = Math.max(0, delay);
     }
 
     @Input() set speed( speed: number ) {
-        this._speed = speed || this._speed;
-        this._speed_clone = Math.max(0, this._speed);
+        this._speed = Math.max(0, speed);
+    }
+
+    @Input() set deletingAcceleration( deletingAcceleration: number ) {
+        this._deletingAcceleration = Math.max(0, deletingAcceleration);
+    }
+
+    @Input() set deletingTopSpeed( deletingTopSpeed: number ) {
+        this._deletingTopSpeed = Math.max(0, deletingTopSpeed);
     }
 
     private tick(): void {
@@ -123,7 +128,8 @@ export class TypewriterDirective implements AfterViewInit {
 
     private _get_deleting_speed(): number {
         this._speed_clone -= this._deletingAcceleration;
-        return Math.max(this._speed / 4, this._speed_clone);
+        console.log("this._deletingTopSpeed= " + this._deletingTopSpeed);
+        return Math.max(this._deletingTopSpeed, this._speed_clone);
     }
 
     private _deal_with_unerasable( fullText: string ): void {

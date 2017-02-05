@@ -1,1 +1,1 @@
-export * from './src/ng2-typewriter';
+export * from './src/index';

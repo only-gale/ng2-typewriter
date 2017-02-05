@@ -52,7 +52,7 @@ And then add the `TypewriterService` into your components' `providers`:
 
 ```html
 <typewriter [contents]="[]" [erasable]="false" [beforeType]="500" [beforeStart]="0" [afterEnd]="1000" [delay]="0"
-[speed]="40" [deletingAcceleration]="5" [cursor]="_" [cursorDelay]="-1">
+[speed]="40" [deletingAcceleration]="5" [deletingTopSpeed]="5" [cursor]="'_'" [cursorDelay]="-1">
 </typewriter>
 ```
 
@@ -111,6 +111,13 @@ deletingAcceleration: number
 The deleting acceleration.
 
 Defaults to `this.speed / 8`.
+
+```ts
+deletingTopSpeed: number
+```
+The deleting top speed. Only works when `this.speed` greater than 0.
+
+Defaults to `this.speed / 4`.
 
 ```ts
 cursor: string

@@ -128,7 +128,6 @@ export class TypewriterDirective implements AfterViewInit {
 
     private _get_deleting_speed(): number {
         this._speed_clone -= this._deletingAcceleration;
-        console.log("this._deletingTopSpeed= " + this._deletingTopSpeed);
         return Math.max(this._deletingTopSpeed, this._speed_clone);
     }
 
@@ -144,7 +143,7 @@ export class TypewriterDirective implements AfterViewInit {
         // Decoration begin
         tick_char = origin_text.substr(-1);
         className = this._decorate_templates[ Math.max(0, origin_text.length - 1) ];
-        this._text_decorated += (className ? this._render(tick_char, className) : tick_char);
+        this._text_decorated += this._render(tick_char, className);
 
         // Condition check.
         if ( this._delay > 0 && origin_text.match(this._regex) && this._index > 1 && this._index <= fullText.length ) {
@@ -175,8 +174,8 @@ export class TypewriterDirective implements AfterViewInit {
         }
     }
 
-    private _render( text: string, className: string ): string {
-        return '<span class="' + className + '">' + text + '</span>';
+    private _render( text: string, className?: string ): string {
+        return className ? '<span class="' + className + '">' + text + '</span>' : text;
     }
 
     private _set_decorate_templates( tc: TypewriterContent ): void {

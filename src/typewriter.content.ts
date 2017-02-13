@@ -75,4 +75,16 @@ export class TypewriterContent {
     public set iterable(iterable: boolean) {
         this._iterable = iterable;
     }
+
+    public setSpecialWord(specialWord: string): void{
+        if (this.specialWords.indexOf(specialWord) === -1){
+            this.specialWords.push(specialWord);
+        }
+    }
+
+    public setSpecialClass(specialClass: string): void{
+        if (this.specialClasses.indexOf(specialClass) === -1){
+            this.specialClasses.push(specialClass);
+        }
+    }
 }

@@ -193,6 +193,18 @@ iterable: boolean
 
 If one of the special words shows up more than once within the content, `true` to make all of them specialized, `false` to just decorate the first one.
 
+```ts
+setSpecialWord(specialWord: string): void
+```
+
+Push the specialWord into `this.specialWords` only if it's not included.
+
+```ts
+setSpecialClass(specialClass: string): void
+```
+
+Push the specialClass into `this.specialClasses` only if it's not included.
+
 #### TypewriterService
 
 ```ts

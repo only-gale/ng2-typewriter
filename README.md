@@ -8,9 +8,12 @@ Please let me know if you encountered any bugs on the [bug list page](https://gi
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Configuration](#Configration)
+* [Configuration](#configration)
 * [API](#api)
+* [Styles](#styles)
 
+
+---
 ## Installation
 
 First you need to install the npm module:
@@ -19,6 +22,8 @@ First you need to install the npm module:
 npm install ng2-typewriter --save
 ```
 
+
+---
 ## Usage
 
 #### 1. Import the `TypewriterModule`:
@@ -50,6 +55,7 @@ import { TypewriterService, TypewriterContent } from "ng2-typewriter";
 And then add the `TypewriterService` into your components' `providers`:
 
 
+---
 ## Configuration
 
 #### TypewriterComponent
@@ -145,6 +151,8 @@ afterDone: EventEmitter<boolean>
 
 Only used to return the typewriter's end flag when `this.cursorDelay > 0`.
 
+
+---
 ## API
 
 #### TypewriterContent
@@ -217,3 +225,22 @@ public format( contents: string[] ): TypewriterContent[]
 ```
 
 Translate from an array of strings to an array of TypewriterContents.
+
+
+---
+## Styles
+
+>All classes below can be overridden by you. For example, using `/deep/`.
+
+
+####.wrap
+
+Marked on a span element to wrap the actual content of the typewriter.
+
+####.cursor
+
+Marked on a span element to wrap the cursor.
+
+####.special-typewriter
+
+Marked on a span element to wrap the special word char by char.

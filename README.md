@@ -56,7 +56,7 @@ And then add the `TypewriterService` into your components' `providers`:
 
 ```html
 <typewriter [contents]="[]" [erasable]="false" [beforeType]="500" [beforeStart]="0" [afterEnd]="1000" [delay]="0"
-[speed]="40" [deletingAcceleration]="5" [deletingTopSpeed]="5" [cursor]="'_'" [cursorDelay]="-1">
+[speed]="40" [deletingAcceleration]="5" [deletingTopSpeed]="5" [cursor]="'_'" [cursorDelay]="-1" (afterDone)="yourMethod( $event )">
 </typewriter>
 ```
 
@@ -139,6 +139,11 @@ If it <= 0, the cursor won't be disappeared.
 
 Defaults to `-1`.
 
+```ts
+afterDone: EventEmitter<boolean>
+```
+
+Only used to return the typewriter's end flag when `this.cursorDelay > 0`.
 
 ## API
 

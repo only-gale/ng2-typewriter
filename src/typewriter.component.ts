@@ -1,7 +1,7 @@
 /**
  * Created by gale on 17-1-22.
  */
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 import { TypewriterContent } from "./typewriter.content";
 @Component({
     selector: "typewriter",
@@ -79,6 +79,8 @@ export class TypewriterComponent implements OnInit {
 
     isDone: boolean = false;
 
+    @Output() afterDone: EventEmitter<boolean> = new EventEmitter();
+
     /**
      * Deal with the appearance of the cursor after all contents are typed out.
      * @param isDone
@@ -88,6 +90,7 @@ export class TypewriterComponent implements OnInit {
             setTimeout(
                 () => {
                     this.isDone = isDone;
+                    this.afterDone.emit(this.isDone);
                 },
                 this.cursorDelay
             );

@@ -50,12 +50,15 @@ export class TypewriterContent {
     public get content(): string {
         return this._content;
     }
+
     public get specialWords(): string[] {
         return this._specialWords;
     }
+
     public get specialClasses(): string[] {
         return this._specialClasses;
     }
+
     public get iterable(): boolean {
         return this._iterable;
     }
@@ -64,26 +67,26 @@ export class TypewriterContent {
         this._content = content;
     }
 
-    public set specialWords(specialWords: string[]) {
+    public set specialWords( specialWords: string[] ) {
         this._specialWords = specialWords;
     }
 
-    public set specialClasses(specialClasses: string[]) {
+    public set specialClasses( specialClasses: string[] ) {
         this._specialClasses = specialClasses;
     }
 
-    public set iterable(iterable: boolean) {
+    public set iterable( iterable: boolean ) {
         this._iterable = iterable;
     }
 
-    public setSpecialWord(specialWord: string): void{
-        if (this.specialWords.indexOf(specialWord) === -1){
+    public setSpecialWord( specialWord: string ): void {
+        if ( this.specialWords.indexOf(specialWord) === -1 ) {
             this.specialWords.push(specialWord);
         }
     }
 
-    public setSpecialClass(specialClass: string): void{
-        if (this.specialClasses.indexOf(specialClass) === -1){
+    public setSpecialClass( specialClass: string ): void {
+        if ( this.specialClasses.indexOf(specialClass) === -1 ) {
             this.specialClasses.push(specialClass);
         }
     }

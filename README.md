@@ -6,12 +6,16 @@ An implementation of angular typewriter for Angular 2.
 But I notice there still several bugs those bring bad experience to you, really sorry for that, **I'll keep working on it**.
 Please let me know if you encountered any bugs on the [bug list page](https://github.com/only-gale/ng2-typewriter/issues).
 
+* [Demo](#demo)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configration)
 * [API](#api)
 * [Styles](#styles)
 
+---
+## Demo
+Here is a demo in [Plunker](#https://plnkr.co/edit/Cr0UlxtZVGam3fGi46HL?p=info) that you can play online.
 
 ---
 ## Installation

@@ -1,6 +1,6 @@
 {
   "name": "ng2-typewriter",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A typewriter for angular2.",
   "typings": "index.d.ts",
   "main": "bundles/ng2-typewriter.umd.js",

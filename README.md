@@ -199,8 +199,8 @@ e.g.:
     then the default class named "special-typewriter" will be used as default.
     
     Of course, users can freely override this class with their own class if the don't like it.
-    
-    
+
+
 ```ts
 iterable: boolean
 ```

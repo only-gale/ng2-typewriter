@@ -15,7 +15,7 @@ Please let me know if you encountered any bugs on the [bug list page](https://gi
 
 ---
 ## Demo
-Here is a demo in [Plunker](#https://plnkr.co/edit/Cr0UlxtZVGam3fGi46HL?p=info) that you can play online.
+Here is a demo in [Plunker](https://plnkr.co/edit/Cr0UlxtZVGam3fGi46HL?p=info) that you can play online.
 
 ---
 ## Installation

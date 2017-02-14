@@ -35,7 +35,10 @@
     "email": "yaogang1987613@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "typescript": "^2.2.0",
+    "@angular/core": "^2.4.4"
+  },
   "devDependencies": {
     "@angular/common": "^2.4.4",
     "@angular/compiler": "^2.4.4",
@@ -44,19 +47,16 @@
     "@angular/platform-browser": "^2.4.4",
     "@angular/platform-browser-dynamic": "^2.4.4",
     "@angular/platform-server": "^2.4.4",
-    "awesome-typescript-loader": "^3.0.0-beta.18",
-    "codelyzer": "^2.0.0-beta.4",
+    "awesome-typescript-loader": "^3.0.3",
+    "codelyzer": "^2.0.0",
     "core-js": "^2.4.1",
-    "rxjs": "^5.0.3",
-    "tslint": "^4.3.1",
-    "tslint-loader": "^3.3.0",
-    "typescript": "^2.1.5",
+    "rxjs": "^5.1.1",
+    "tslint": "^4.4.2",
+    "tslint-loader": "^3.4.2",
+    "typescript": "^2.2.0",
     "typings": "^2.1.0",
-    "webpack": "^2.2.0",
+    "webpack": "^2.2.1",
     "zone.js": "^0.7.6"
-  },
-  "peerDependencies": {
-    "@angular/core": "^2.4.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

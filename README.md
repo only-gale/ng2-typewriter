@@ -40,11 +40,11 @@ And then you can put the `TypewriterComponent`, which is provided by `Typewriter
 <typewriter></typewriter>
 ```
 
-See [Configuration](#Configuration) to figure out how to config the typewriter.
+See [Configuration](#configuration) to figure out how to config the typewriter.
 
 #### 2. Use the `TypewriterService`:
 
-Since the typewriter only can read objects of type [TypewriterContent](#TypewriterContent), so the [TypewriterService](#TypewriterService) provides a way to translate from `String` to `TypewriterContent`, or from an array of `String` to an array of `TypewriterContent`.
+Since the typewriter only can read objects of type [TypewriterContent](#typewritercontent), so the [TypewriterService](#typewriterservice) provides a way to translate from `String` to `TypewriterContent`, or from an array of `String` to an array of `TypewriterContent`.
 
 But first, you need make `TypewriterService` available to your components:
 
@@ -199,6 +199,7 @@ e.g.:
     then the default class named "special-typewriter" will be used as default.
     
     Of course, users can freely override this class with their own class if the don't like it.
+    
     
 ```ts
 iterable: boolean
